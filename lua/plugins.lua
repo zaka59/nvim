@@ -20,4 +20,21 @@ return require('packer').startup(function(use)
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
 
+	-- Nvim Tree
+	use { 'nvim-tree/nvim-tree.lua',
+	  requires = { 'nvim-tree/nvim-web-devicons' },
+	  tag = 'nightly' -- optional, updated every week. (see issue #1193)
+	}
+
+	-- Mason and lspconfig
+	use {
+		'williamboman/mason.nvim',
+		'williamboman/mason-lspconfig.nvim',
+		'neovim/nvim-lspconfig',
+	}
+
+	-- Indent Blankline
+	use { 'lukas-reineke/indent-blankline.nvim' }
+	
+
 end)
