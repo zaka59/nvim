@@ -36,5 +36,12 @@ return require('packer').startup(function(use)
 	-- Indent Blankline
 	use { 'lukas-reineke/indent-blankline.nvim' }
 	
+	-- MarkdownPreview
+	use{ 'iamcco/markdown-preview.nvim',
+		run = function() vim.fn["mkdp#util#install"]() end
+	}
+
+	-- VimSpector
+	use { 'puremourning/vimspector' }
 
 end)

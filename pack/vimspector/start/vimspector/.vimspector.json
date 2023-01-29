@@ -1,0 +1,29 @@
+{
+  "configurations": {
+    "Node": {
+      "adapter": "vscode-node",
+      "filetypes": [ "javascript" ],
+      "default": true,
+      "configuration": {
+        "request": "launch",
+        "protocol": "auto",
+        "stopOnEntry": true,
+        "console": "integratedTerminal",
+        "program": "${workspaceRoot}/test.js",
+        "cwd": "${workspaceRoot}"
+      }
+    },
+    "Python": {
+      "adapter": "debugpy",
+      "filetypes": [ "python" ],
+      "default": true,
+      "configuration": {
+        "request": "launch",
+		"program": "${file}",
+		"stopAtEntry": true,
+        "stopOnEntry": true,
+        "cwd": "${workspaceRoot}"
+      }
+    }
+  }
+}
