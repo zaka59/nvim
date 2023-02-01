@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
 	  tag = 'nightly' -- optional, updated every week. (see issue #1193)
 	}
 
+
 	-- Mason and lspconfig
 	use {
 		'williamboman/mason.nvim',
@@ -43,5 +44,8 @@ return require('packer').startup(function(use)
 
 	-- VimSpector
 	use { 'puremourning/vimspector' }
+
+	-- GitSigns
+	use { 'lewis6991/gitsigns.nvim' }
 
 end)
