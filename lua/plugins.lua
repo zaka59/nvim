@@ -48,4 +48,13 @@ return require('packer').startup(function(use)
 	-- GitSigns
 	use { 'lewis6991/gitsigns.nvim' }
 
+	--AutoCompletion and Snippets
+	use { 'hrsh7t nvim-cmp' } -- Autocompletion plugin
+	use { 'hrsh7th/cmp-nvim-lsp' } -- LSP source for nvim-cmp
+	use { 'L3MON4D3/LuaSnip' } -- Snippets plugin
+	use { 'saadparwaiz1/cmp_luasnip' } -- Snippets source for nvim-cmp
+
+	--Commenter
+	use { 'numToStr/Comment.nvim' }
+
 end)

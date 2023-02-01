@@ -1,10 +1,8 @@
 ### Install
 
- Install the following plugins : 
+OSx only
 
-	- Packer.nvim (Required) : `make packer`
-	- Gitglutter (Optional) : `make gitglutter`
-	- GitHubCopilot (Optional) : `make copilot`
+Install with `make install`
 
 Open `nvim/lua/plugins.lua` with nvim (ignore the errors), then run `PackerInstall`.
 
