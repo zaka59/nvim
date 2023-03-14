@@ -13,5 +13,13 @@ set.fillchars = {eob=' '}
 let.loaded_netrw = 1
 let.loaded_netrwPlugin = 1
 
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = false,
+})
+
 require('keymaps')
 require('commands')

@@ -20,6 +20,9 @@ return require('packer').startup(function(use)
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
 
+	-- Nvim web devicons	
+	use { 'nvim-tree/nvim-web-devicons' }
+
 	-- Nvim Tree
 	use { 'nvim-tree/nvim-tree.lua',
 	  requires = { 'nvim-tree/nvim-web-devicons' },
@@ -49,12 +52,30 @@ return require('packer').startup(function(use)
 	use { 'lewis6991/gitsigns.nvim' }
 
 	--AutoCompletion and Snippets
-	use { 'hrsh7t nvim-cmp' } -- Autocompletion plugin
+	use { 'hrsh7th/nvim-cmp' } -- Autocompletion plugin
 	use { 'hrsh7th/cmp-nvim-lsp' } -- LSP source for nvim-cmp
 	use { 'L3MON4D3/LuaSnip' } -- Snippets plugin
 	use { 'saadparwaiz1/cmp_luasnip' } -- Snippets source for nvim-cmp
 
 	--Commenter
 	use { 'numToStr/Comment.nvim' }
+
+	--Barbar
+	--use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
+	
+
+	
+	--Copilot Config
+	use { 'github/copilot.vim' }
+	
+	--Copilot Config
+	use { "zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter"
+	}
+
+	use { "windwp/nvim-autopairs" }
+	-- Auto close brackets/pars...
+	use { "windwp/nvim-autopairs" }
 
 end)

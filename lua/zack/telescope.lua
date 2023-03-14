@@ -1,9 +1,51 @@
 local builtin = require('telescope.builtin')
-local key = vim.keymap
-key.set('n', '<leader>ff', builtin.find_files, {})
-key.set('n', '<leader>fk', builtin.keymaps, {})
-key.set('n', '<leader>fg', builtin.live_grep, {})
-key.set('n', '<leader>fb', builtin.buffers, {})
-key.set('n', '<leader>fh', builtin.help_tags, {})
+local actions = require('telescope.actions')
+local keymap = vim.keymap.set
+local map = vim.api.nvim_set_keymap
+local default_opts = {noremap = true, silent = true}
 
-require('telescope').setup {}
+keymap('n', '<leader>ff', builtin.find_files, {})
+keymap('n', '<leader>fk', builtin.keymaps, {})
+keymap('n', '<leader>fg', builtin.live_grep, {})
+keymap('n', '<leader>fb', builtin.buffers, {})
+keymap('n', '<leader>fh', builtin.help_tags, {})
+
+
+--[[ // TODO : close accol ]]
+-- keymap('v', '<leader>fv', builtin.live_grep({}, 'cword'), {})
+-- keymap('n', '<leader>fw', builtin.live_grep({}, 'cword'), {})
+-- keymap('n', '<leader>fW', builtin.live_grep({}, 'cWORD'), {})
+-- keymap('n', '<leader>fm', ':set opfunc=LiveGrepRawOperator<CR>g@', 'Find with movement')
+
+map('v', '<Leader>fg', 'y<ESC>:Telescope live_grep default_text=<c-r>0<CR>', default_opts)
+map('v', '<Leader>ff', 'y<ESC>:Telescope find_files default_text=<c-r>0<CR>', default_opts)
+
+
+
+require('telescope').setup {
+	pickers = {
+		find_files = {
+			mappings = {
+				n = {
+					["t"] = actions.file_tab,
+					["v"] = actions.file_vsplit,
+					["s"] = actions.file_split,
+				}
+			},
+			hidden = true
+		},
+		live_grep = {
+			mappings = {
+				n = {
+					["t"] = actions.file_tab,
+					["v"] = actions.file_vsplit,
+					["s"] = actions.file_split,
+				}
+			},
+			hidden = true
+		}
+	},
+	defaults = { 
+		file_ignore_patterns = {".git","node_modules","*.swo","*.swp",".DS_Store"}
+	}
+}

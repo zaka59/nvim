@@ -38,13 +38,18 @@ local lsp_flags = {
 }
 require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
-    flags = lsp_flags,
+    --[[ flags = lsp_flags, ]]
 }
 require('lspconfig')['clangd'].setup{
     on_attach = on_attach,
+--	cmd = {'/usr/bin/clangd'},
     flags = lsp_flags,
 }
 require('lspconfig')['tsserver'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')['bashls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
