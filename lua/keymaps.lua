@@ -39,3 +39,6 @@ function toggle_background()
 end
 
 keymap('n', '<C-Lock>', ':lua toggle_background()<CR>', { noremap = true, silent = false })
+
+
+keymap('t', '<Esc>', '<C-\\><C-n>',bufopts) -- Escape from terminal with escape key

@@ -21,5 +21,7 @@ vim.diagnostic.config({
   severity_sort = false,
 })
 
+vim.g.copilot_assume_mapped = true
+
 require('keymaps')
 require('commands')
