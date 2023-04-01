@@ -74,8 +74,13 @@ return require('packer').startup(function(use)
 		event = "InsertEnter"
 	}
 
-	use { "windwp/nvim-autopairs" }
 	-- Auto close brackets/pars...
 	use { "windwp/nvim-autopairs" }
+
+
+
+	-- Treesitter
+	use { 'nvim-treesitter/nvim-treesitter' }
+
 
 end)

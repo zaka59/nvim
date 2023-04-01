@@ -42,3 +42,8 @@ keymap('n', '<C-Lock>', ':lua toggle_background()<CR>', { noremap = true, silent
 
 
 keymap('t', '<Esc>', '<C-\\><C-n>',bufopts) -- Escape from terminal with escape key
+keymap('t', 'jk', '<C-\\><C-n>',bufopts) -- Escape from terminal with escape key
+keymap('t', '<Leader>k', '<Up>',bufopts) -- Escape from terminal with escape key
+keymap('t', '<Leader>j', '<Down>',bufopts) -- Escape from terminal with escape key
+
+
