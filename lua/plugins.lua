@@ -82,5 +82,11 @@ return require('packer').startup(function(use)
 	-- Treesitter
 	use { 'nvim-treesitter/nvim-treesitter' }
 
+	-- Vimtex
+	use { 'lervag/vimtex' }
+
+	-- Vim Latex Live Preview
+	use { 'xuhdev/vim-latex-live-preview' }
+
 
 end)

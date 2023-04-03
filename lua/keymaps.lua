@@ -20,30 +20,26 @@ keymap("n", '<C-l>', ':vertical resize +2<CR>', bufopts)
 
 -- remap of useful commands
 keymap("n", ";d", '<C-x>', bufopts)
-keymap("n", ";f", '<C-d>', bufopts)
+keymap("n", ";f", '<C-a>', bufopts)
 
 
 -- Toogle theme
 
 -- Function to toggle between dark and light backgrounds
-function toggle_background()
-  if vim.g.background_mode == 'light' then
-    vim.opt.background = 'dark'
-    --vim.cmd('colorscheme <your-dark-colorscheme>')
-    -- vim.g.background_mode = 'dark'
-  else
+function light()
     vim.opt.background = 'light'
-    --vim.cmd('colorscheme <your-light-colorscheme>')
-    -- vim.g.background_mode = 'light'
-  end
+    vim.cmd('colorscheme solarized')
+end
+function dark()
+    vim.opt.background = 'dark'
+    vim.cmd('colorscheme gruvbox')
 end
 
-keymap('n', '<C-Lock>', ':lua toggle_background()<CR>', { noremap = true, silent = false })
+keymap('n', '<Leader>t', ':lua light()<CR>', { noremap = true, silent = false })
+keymap('n', '<Leader>T', ':lua dark()<CR>', { noremap = true, silent = false })
 
 
 keymap('t', '<Esc>', '<C-\\><C-n>',bufopts) -- Escape from terminal with escape key
 keymap('t', 'jk', '<C-\\><C-n>',bufopts) -- Escape from terminal with escape key
 keymap('t', '<Leader>k', '<Up>',bufopts) -- Escape from terminal with escape key
 keymap('t', '<Leader>j', '<Down>',bufopts) -- Escape from terminal with escape key
-
-
