@@ -29,6 +29,7 @@ keymap("n", ";f", '<C-a>', bufopts)
 function light()
     vim.opt.background = 'light'
     vim.cmd('colorscheme solarized')
+    vim.cmd('autocmd ColorScheme * highlight! link SignColumn LineNr')
 end
 function dark()
     vim.opt.background = 'dark'
@@ -40,6 +41,14 @@ keymap('n', '<Leader>T', ':lua dark()<CR>', { noremap = true, silent = false })
 
 
 keymap('t', '<Esc>', '<C-\\><C-n>',bufopts) -- Escape from terminal with escape key
-keymap('t', 'jk', '<C-\\><C-n>',bufopts) -- Escape from terminal with escape key
-keymap('t', '<Leader>k', '<Up>',bufopts) -- Escape from terminal with escape key
-keymap('t', '<Leader>j', '<Down>',bufopts) -- Escape from terminal with escape key
+keymap('t', 'jk', '<C-\\><C-n>',bufopts) 
+keymap('t', '<Leader>k', '<Up>',bufopts) 
+keymap('t', '<Leader>j', '<Down>',bufopts)
+keymap('t', '<Leader>c', '<C-c>',bufopts)
+keymap('t', '<Leader>e', '<Enter>',bufopts)
+
+
+
+keymap('n', '<Leader>ws', '<C-w>s', { noremap = true, silent = false })
+keymap('n', '<Leader>wv', '<C-w>v', { noremap = true, silent = false })
+

@@ -8,6 +8,9 @@ return require('packer').startup(function(use)
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.1',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+	
+	use {'nvim-telescope/telescope-ui-select.nvim' }
+
 
     -- Gruvbox
     use { 'morhetz/gruvbox' }
@@ -63,8 +66,6 @@ return require('packer').startup(function(use)
 	--Barbar
 	--use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
 	
-
-	
 	--Copilot Config
 	use { 'github/copilot.vim' }
 	
@@ -77,8 +78,6 @@ return require('packer').startup(function(use)
 	-- Auto close brackets/pars...
 	use { "windwp/nvim-autopairs" }
 
-
-
 	-- Treesitter
 	use { 'nvim-treesitter/nvim-treesitter' }
 
@@ -87,6 +86,42 @@ return require('packer').startup(function(use)
 
 	-- Vim Latex Live Preview
 	use { 'xuhdev/vim-latex-live-preview' }
+
+	-- Tabline
+	use {
+	  'kdheepak/tabline.nvim',
+	  config = function()
+		require'tabline'.setup {enable = false}
+	  end,
+	  requires = {'nvim-lualine/lualine.nvim', 'kyazdani42/nvim-web-devicons'}
+	}
+
+	-- Bufferline
+	use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
+	-- Dressing
+	use { 'stevearc/dressing.nvim' }
+
+	-- Flutter Tools
+	use {
+    'akinsho/flutter-tools.nvim',
+    requires = {
+        'nvim-lua/plenary.nvim',
+        'stevearc/dressing.nvim', -- optional for vim.ui.select
+		'nvim-tree/nvim-web-devicons'
+    }
+
+	}
+	use { 'ThePrimeagen/vim-be-good' }	
+
+	use { 'ThePrimeagen/git-worktree.nvim' }	
+
+	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+	  require("toggleterm").setup()
+	end
+	}
+
+	use { 'f-person/git-blame.nvim' }
 
 
 end)

@@ -9,6 +9,11 @@ keymap('n', '<leader>fk', builtin.keymaps, {})
 keymap('n', '<leader>fg', builtin.live_grep, {})
 keymap('n', '<leader>fb', builtin.buffers, {})
 keymap('n', '<leader>fh', builtin.help_tags, {})
+keymap('n', '<leader>fc', builtin.commands, {})
+keymap('n', '<leader>fa', vim.lsp.buf.code_action, {})
+
+-- keymap('n', '<leader>fi', function() require('telescope').extensions.git_worktree.git_worktrees() end)
+keymap('n', '<leader>fi', function() require('telescope').extensions.git_worktree.create_git_worktree() end)
 
 
 --[[ // TODO : close accol ]]
@@ -19,6 +24,8 @@ keymap('n', '<leader>fh', builtin.help_tags, {})
 
 map('v', '<Leader>fg', 'y<ESC>:Telescope live_grep default_text=<c-r>0<CR>', default_opts)
 map('v', '<Leader>ff', 'y<ESC>:Telescope find_files default_text=<c-r>0<CR>', default_opts)
+-- map('n', '<Leader>fc', 'y<ESC>:Telescope commands<CR>', default_opts)
+
 
 
 
@@ -47,5 +54,14 @@ require('telescope').setup {
 	},
 	defaults = { 
 		file_ignore_patterns = {".git","node_modules","*.swo","*.swp",".DS_Store"}
+	},
+	extensions = {
+	   ["ui-select"] = {
+		require("telescope.themes").get_dropdown {
+			-- even more opts
+		}
+		}
 	}
 }
+require('telescope').load_extension('git_worktree')
+require('telescope').load_extension('ui-select')
